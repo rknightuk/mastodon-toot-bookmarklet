@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Mastodon Toot Bookmarklet</title>
+
+		<style>
+			body {
+				font-family: sans-serif;
+				max-width: 700px;
+				margin: 0 auto;
+				text-align: center;
+				background: white;
+				margin-top: 20px;
+				padding: 10px;
+			}
+
+			#link {
+				color: #fff;
+			    background-color: #17a2b8;
+			    border: 1px solid #17a2b8;
+			    padding: 10px;
+			    border-radius: 5px;
+			}
+
+			input {
+				padding: 10px;
+				font-size: 14px;
+			}
+
+			.link-wrap {
+				margin-top: 30px;
+			}
+
+			.info {
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+<body onload="generateLink()">
+
+	<h1>Mastodon Toot Bookmarklet</h1>
+
+	<p>1. Add your Mastodon instance:</p>
+
+	<input onchange="generateLink()" id="instance" type="text" value="mastodon.social">
+
+	<p>2. Drag this link to your bookmarks bar (or click it to try it out with this page)</p>
+
+	<p class="link-wrap"><a id="link" href="">Toot!</a></p>
+
+	<p><small>NB: If you select text before clicking, it will add that to the toot as well!</small></p>
+
+	<div class="info">
+		<p>Made by <a href="https://robblewis.me">Robb Lewis</a></p>
+		<p>Mastodon: <a href="https://toot.rodeo/@rmlewisuk">@rmlewisuk@toot.rodeo</a></p>
+		<p><a href="https://github.com/rmlewisuk/mastodon-toot-bookmarklet">Source on GitHub</a></p>
+	</div>
+
+	<script>
+		generateLink = function() {
+			var instance = document.getElementById('instance').value;
+			var href = `javascript:window.open('https://${instance}/share?text='+encodeURIComponent(document.title)+' '+encodeURIComponent(window.location.href)+encodeURIComponent(window.getSelection().toString() ? '\n\n': '')+encodeURIComponent(window.getSelection().toString()), '_blank','width=600,height=600,toolbar=no')`;
+
+			document.getElementById('link').href = href;
+		}
+	</script>
+
+</body>
+</html>
