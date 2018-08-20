@@ -6,3 +6,9 @@
 - Includes selected text if any exists
 
 ![](screenshot.png)
+
+### License 
+
+[http://rmlewisuk.mit-license.org/](http://rmlewisuk.mit-license.org/)
+
+Favicon from 
