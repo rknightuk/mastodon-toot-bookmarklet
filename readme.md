@@ -11,4 +11,4 @@
 
 [http://rmlewisuk.mit-license.org/](http://rmlewisuk.mit-license.org/)
 
-Favicon from 
+Favicon from Mastodon
