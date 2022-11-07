@@ -111,7 +111,7 @@
 	<script>
 		generateLink = function() {
 			var instance = document.getElementById('instance').value;
-			var href = `javascript:window.open('https://${instance}/share?text='+encodeURIComponent(document.title)+' '+encodeURIComponent(window.location.href)+encodeURIComponent(window.getSelection().toString() ? '\n\n': '')+encodeURIComponent(window.getSelection().toString()), '_blank','width=600,height=600,toolbar=no')`;
+			var href = `javascript:void(window.open('https://${instance}/share?text='+encodeURIComponent(document.title)+' '+encodeURIComponent(window.location.href)+encodeURIComponent(window.getSelection().toString() ? '\n\n': '')+encodeURIComponent(window.getSelection().toString()), '_blank','width=600,height=600,toolbar=no'))`;
 
 			document.getElementById('link').href = href;
 			document.getElementById('input').innerHTML = href;
